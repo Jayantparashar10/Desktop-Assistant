@@ -8,7 +8,9 @@ from googlesearch import search
 from AppOpener import open
 import datetime
 import pyjokes 
+import os 
 import random
+import time
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id )
@@ -52,6 +54,27 @@ def takeCommand():
     return query
 def ask(text):
     speak("What time you want to get remainder")
+def timer(x):
+    
+    while x:
+        mins, secs = divmod(x, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        print(timer, end="\r")
+        time.sleep(1)
+        x -=1
+    
+        print('Timer completed! ')
+
+    x= input("Enter time in second ")
+
+    timer(int(x))
+
+def dateandtime(t):
+    t=time.localtime()
+    return time.asctime([t])
+
+time_phrase= ["what is the time", 'what date is today ','which day is today','today' ]
+reminders_phrase =  ['set a reminder', 'remind me ', 'remind me latter', 'remind me this twomorrow ', 'remember this for me']
 
     
  
@@ -88,5 +111,27 @@ if __name__ == '__main__':
             x_1 = (random.choice(pyjokes.get_jokes(language="en",category="all")))
             print(x_1)
             speak(x_1)
-            
-            
+        #elif 'what are my reminders ' in query:
+         #   file1 = open('reminders.txt', 'r')
+          #  file2= file1.read()
+           # speak(file2)
+        elif 'set a timer ' in query:
+            speak("How long ")
+        
+            #speak(f"Setting timer of {x} sec")
+        #for phrase in reminders_phrase:
+        #    if phrase in query:
+         #       file1= open('reminders.txt', 'w')
+          #      speak('what do you want me to reminde you about')
+           #     s=takeCommand()
+           #     s_1=str(s)
+            #    file1.write(s_1)
+             #   file1.close()
+             #   speak('I have saved it to reminders')
+        for i in time_phrase:
+            if i in query:
+                t= time.localtime()
+                t_1 = time.asctime(t)
+                print(t_1)
+                speak(t_1)        
+               
