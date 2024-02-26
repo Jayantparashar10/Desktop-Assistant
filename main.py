@@ -111,10 +111,7 @@ if __name__ == '__main__':
             x_1 = (random.choice(pyjokes.get_jokes(language="en",category="all")))
             print(x_1)
             speak(x_1)
-        #elif 'what are my reminders ' in query:
-         #   file1 = open('reminders.txt', 'r')
-          #  file2= file1.read()
-           # speak(file2)
+        
         elif 'set a timer ' in query:
             speak("How long ")
         
@@ -123,7 +120,7 @@ if __name__ == '__main__':
         #    if phrase in query:
          #       file1= open('reminders.txt', 'w')
           #      speak('what do you want me to reminde you about')
-           #     s=takeCommand()
+           #  rerrt   s=takeCommand()
            #     s_1=str(s)
             #    file1.write(s_1)
              #   file1.close()
