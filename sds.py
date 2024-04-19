@@ -1,4 +1,4 @@
-Youu need to install these module using pip from cmd or terminal 
+You need to install these module using pip from cmd or terminal 
 import pyttsx3
 import speeachrecogination
 import wikipedia 
@@ -7,5 +7,6 @@ import webbrowser
 import Appopner 
 import datetime
 import pyjokes
-You jus need to import these in you code editor by using comand "import"
 import random
+
+You just need to import these in you code editor by using comand "import"
